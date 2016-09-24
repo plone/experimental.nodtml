@@ -41,4 +41,8 @@ setup(
     install_requires=[
         'setuptools',
     ],
+    entry_points="""
+    [z3c.autoinclude.plugin]
+    target = plone
+    """,
 )

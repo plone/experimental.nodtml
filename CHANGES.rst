@@ -15,7 +15,7 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Added z3c.autoinclude entry point, so our code gets loaded on startup.  [maurits]
 
 
 1.0 (2016-09-24)
