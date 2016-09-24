@@ -12,7 +12,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='experimental.nodtml',
-    version='1.0.2.dev0',
+    version='1.0.2',
     description="Patch DocumentTemplate to not return any content.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
