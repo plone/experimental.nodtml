@@ -18,7 +18,7 @@ def quotedHTML(self, *args, **kwargs):
     return VALUE
 
 HTML._orig_quotedHTML = HTML.quotedHTML
-HTML._orig__str__= HTML.quotedHTML
+HTML._orig__str__ = HTML.quotedHTML
 HTML.quotedHTML = quotedHTML
 
 

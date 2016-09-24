@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from DocumentTemplate.DT_HTML import HTML
 from DocumentTemplate.DT_String import String
 from unittest import TestCase
