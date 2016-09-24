@@ -32,7 +32,7 @@ String._orig__call__ = String.__call__
 String.__call__ = __call__
 
 
-def __str__(self):
+def __str__(self, *args, **kwargs):
     if SHOW:
         logger.info('hacked string str')
         logger.info(self._orig__str__(*args, **kwargs))

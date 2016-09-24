@@ -15,7 +15,7 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Fixed showing ``String .__str__``.  [maurits]
 
 
 1.0.1 (2016-09-24)
