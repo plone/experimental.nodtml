@@ -49,8 +49,8 @@ No zcml is needed.
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/experimental.nodtml/issues
-- Source Code: https://github.com/collective/experimental.nodtml
+- Issue Tracker: https://github.com/plone/experimental.nodtml/issues
+- Source Code: https://github.com/plone/experimental.nodtml
 
 
 License
