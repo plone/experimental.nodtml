@@ -15,7 +15,9 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Return empty string instead of empty unicode by default.  Otherwise
+  you get exceptions when loading dtml files in for example the css
+  registry on Plone 4.3.  [maurits]
 
 
 1.0.2 (2016-09-24)
