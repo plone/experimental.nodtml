@@ -25,11 +25,15 @@ Options
 The package looks for a few environment variables.
 
 ``SHOW_ORIGINAL_DTML``
-    When this is set, the original DTML value is printed in the zope instance log.
+    When this is set to a true value, the original DTML value is printed in the zope instance log.
     The arguments and keyword arguments are also shown, so you can know where this is coming from.
+    Default: false.
 
 ``DEBUG_DTML_VALUE``
     When this is set, the given value is return as content of the DTML.
+    Default: empty string.
+
+Accepted True values are: ``true``, ``t``, ``1``, ``yes``, ``y``.
 
 
 Installation

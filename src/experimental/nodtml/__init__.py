@@ -7,8 +7,15 @@ import os
 
 
 logger = logging.getLogger('experimental.nodtml')
+TRUE_VALUES = ('true', 't', '1', 'yes', 'y')
+
 # Show original dtml text in the logs?
-SHOW = os.environ.get('SHOW_ORIGINAL_DTML')
+SHOW = os.environ.get('SHOW_ORIGINAL_DTML', 'false')
+if SHOW and SHOW.lower() in TRUE_VALUES:
+    SHOW = True
+else:
+    SHOW = False
+
 # Value to use instead of the original dtml text.
 # Note: this must be a string, not unicode.
 # Otherwise you may get exceptions in Products.ResourceRegistries,

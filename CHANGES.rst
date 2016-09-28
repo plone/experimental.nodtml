@@ -15,6 +15,10 @@ New features:
 
 Bug fixes:
 
+- Interpret value of ``SHOW_ORIGINAL_DTML`` as true value.
+  Accepted True values are: ``true``, ``t``, ``1``, ``yes``, ``y``.
+  [maurits]
+
 - Show arguments and keyword arguments when ``SHOW_ORIGINAL_DTML`` is true.
   [maurits]
 
