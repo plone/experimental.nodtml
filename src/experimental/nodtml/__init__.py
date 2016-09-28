@@ -20,7 +20,8 @@ VALUE = os.environ.get('DEBUG_DTML_VALUE', '')
 
 def quotedHTML(self, *args, **kwargs):
     if SHOW:
-        logger.info('hacked quotedHTML')
+        logger.info(
+            'Hacked quotedHTML for args %r and kwargs %r.', args, kwargs)
         logger.info(self._orig_quotedHTML(*args, **kwargs))
     return VALUE
 
@@ -31,7 +32,8 @@ HTML.quotedHTML = quotedHTML
 
 def __call__(self, *args, **kwargs):
     if SHOW:
-        logger.info('hacked string call')
+        logger.info(
+            'Hacked string call for args %r and kwargs %r.', args, kwargs)
         logger.info(self._orig__call__(*args, **kwargs))
     return VALUE
 
@@ -41,7 +43,8 @@ String.__call__ = __call__
 
 def __str__(self, *args, **kwargs):
     if SHOW:
-        logger.info('hacked string str')
+        logger.info(
+            'Hacked string str for args %r and kwargs %r.', args, kwargs)
         logger.info(self._orig__str__(*args, **kwargs))
     return VALUE
 

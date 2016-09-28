@@ -15,6 +15,9 @@ New features:
 
 Bug fixes:
 
+- Show arguments and keyword arguments when ``SHOW_ORIGINAL_DTML`` is true.
+  [maurits]
+
 - Return empty string instead of empty unicode by default.  Otherwise
   you get exceptions when loading dtml files in for example the css
   registry on Plone 4.3.  [maurits]
