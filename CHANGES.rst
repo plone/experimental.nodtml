@@ -11,7 +11,7 @@ Breaking changes:
 
 New features:
 
-- *add item here*
+- Added ``EXPERIMENTAL_NODTML_ONLY_WARN`` option.  [maurits]
 
 Bug fixes:
 

@@ -33,6 +33,11 @@ The package looks for a few environment variables.
     When this is set, the given value is return as content of the DTML.
     Default: empty string.
 
+``EXPERIMENTAL_NODTML_ONLY_WARN``
+    When this is set to a true value, instead of replacing the dtml value, a warning is logged.
+    When true, the ``SHOW_ORIGINAL_DTML`` and ``DEBUG_DTML_VALUE`` settings are ignored.
+    Default: false.
+
 Accepted True values are: ``true``, ``t``, ``1``, ``yes``, ``y``.
 
 
