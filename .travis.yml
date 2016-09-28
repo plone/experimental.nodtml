@@ -7,7 +7,9 @@ cache:
 python:
   - 2.7
 install:
-  - python bootstrap-buildout.py -c travis.cfg
+# Keep setuptools the same as in buildout.cfg,
+# otherwise you may run into a VersionConflict.
+  - python bootstrap-buildout.py --setuptools-version=27.3.0 -c travis.cfg
   - bin/buildout -Nc travis.cfg buildout:eggs-directory=$HOME/buildout-cache/eggs buildout:download-cache=$HOME/buildout-cache/downloads
 script:
   - bin/code-analysis
