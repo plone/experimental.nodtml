@@ -5,10 +5,6 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-Breaking changes:
-
-- *add item here*
-
 New features:
 
 - Added ``EXPERIMENTAL_NODTML_ONLY_WARN`` option.  [maurits]
