@@ -29,23 +29,42 @@ ONLY_WARN = os.environ.get('EXPERIMENTAL_NODTML_ONLY_WARN', 'false')
 if ONLY_WARN and ONLY_WARN.lower() in TRUE_VALUES:
     ONLY_WARN = True
     logger.info('Will only warn about DTML usage, not replace the value.')
-    if VALUE:
-        logger.warn('Ignored DEBUG_DTML_VALUE '
-                    'in favor of EXPERIMENTAL_NODTML_ONLY_WARN.')
-        VALUE = ''
-    if SHOW:
-        logger.warn('Ignored SHOW_ORIGINAL_DTML '
-                    'in favor of EXPERIMENTAL_NODTML_ONLY_WARN.')
-        SHOW = False
 else:
     ONLY_WARN = False
+
+# Should we raise an exception?
+RAISE = os.environ.get('EXPERIMENTAL_NODTML_RAISE', 'false')
+if RAISE and RAISE.lower() in TRUE_VALUES:
+    RAISE = True
+    logger.info('Will raise exception when DTML is used.')
+else:
+    RAISE = False
+
+# Handle conflicting options.
+if RAISE and ONLY_WARN:
+    logger.warn('Ignored EXPERIMENTAL_NODTML_ONLY_WARN.')
+    ONLY_WARN = ''
+if ONLY_WARN or RAISE:
+    if VALUE:
+        logger.warn('Ignored DEBUG_DTML_VALUE.')
+        VALUE = ''
+    if SHOW:
+        logger.warn('Ignored SHOW_ORIGINAL_DTML.')
+        SHOW = False
+else:
     if VALUE:
         logger.info('Patched DTML to show: %r.', VALUE)
     else:
         logger.info('Patched DTML to not show anything.')
 
 
+class NoDTMLException(Exception):
+    """DTML was used, but EXPERIMENTAL_NODTML_RAISE is set."""
+
+
 def quotedHTML(self, *args, **kwargs):
+    if RAISE:
+        raise NoDTMLException('args {0} and kwargs {1}.'.format(args, kwargs))
     if SHOW or ONLY_WARN:
         logger.info(
             'Hacked quotedHTML for args %r and kwargs %r.', args, kwargs)
@@ -62,6 +81,8 @@ HTML.quotedHTML = quotedHTML
 
 
 def __call__(self, *args, **kwargs):
+    if RAISE:
+        raise NoDTMLException('args {0} and kwargs {1}.'.format(args, kwargs))
     if SHOW or ONLY_WARN:
         logger.info(
             'Hacked string call for args %r and kwargs %r.', args, kwargs)
@@ -77,6 +98,8 @@ String.__call__ = __call__
 
 
 def __str__(self, *args, **kwargs):
+    if RAISE:
+        raise NoDTMLException('args {0} and kwargs {1}.'.format(args, kwargs))
     if SHOW or ONLY_WARN:
         logger.info(
             'Hacked string str for args %r and kwargs %r.', args, kwargs)

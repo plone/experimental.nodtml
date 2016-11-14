@@ -38,6 +38,11 @@ The package looks for a few environment variables.
     When true, the ``SHOW_ORIGINAL_DTML`` and ``DEBUG_DTML_VALUE`` settings are ignored.
     Default: false.
 
+``EXPERIMENTAL_NODTML_RAISE``
+    When this is set to a true value, instead of replacing the dtml value, an exception is raised.
+    When true, the other settings are ignored.
+    Default: false.
+
 Accepted True values are: ``true``, ``t``, ``1``, ``yes``, ``y``.
 
 
