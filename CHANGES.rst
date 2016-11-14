@@ -5,17 +5,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-Breaking changes:
-
-- *add item here*
-
 New features:
 
 - Added ``EXPERIMENTAL_NODTML_RAISE`` option.  [maurits]
-
-Bug fixes:
-
-- *add item here*
 
 
 1.1 (2016-09-28)
