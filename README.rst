@@ -61,6 +61,15 @@ and then running ``bin/buildout``
 No zcml is needed.
 
 
+Supported Plone Versions
+------------------------
+
+- Plone 4.x
+- Plone 5.x
+
+We are only patching ``DocumentTemplate`` so this works with any plain Zope2.
+
+
 Contribute
 ----------
 
